@@ -174,3 +174,11 @@ itCompanies.length = 0
 let removeAll = itCompanies.splice(0)
 console.log(removeAll)
 console.log(itCompanies)
+
+
+
+/**************
+ * Exercise: Level 2
+ **************/
+import { countries } from "./countries"
+console.log(countries)
