@@ -4,7 +4,7 @@
  ******/
 
 // Exercise: Level 1
-const countries = [
+const countriesArr = [
     'Albania',
     'Bolivia',
     'Canada',
@@ -18,7 +18,7 @@ const countries = [
     'Kenya',
   ]
   
-  const webTechs = [
+  const webTechsArr = [
     'HTML',
     'CSS',
     'JavaScript',
@@ -180,5 +180,10 @@ console.log(itCompanies)
 /**************
  * Exercise: Level 2
  **************/
-import { countries } from "./countries"
+// Create a separate countries.js file and store the countries array into this file, create a separate file web_techs.js and store the webTechs array into this file. Access both file in main.js file
+
+import { countries } from "./countries.js"
 console.log(countries)
+
+import { webTechs } from "./webTechs.js"
+console.log(webTechs)
