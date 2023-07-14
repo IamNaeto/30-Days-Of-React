@@ -1,0 +1,227 @@
+ <!------------------------------------ Exercises  ------------------------>
+ <!------------------------
+ Exercises: What is React? 
+ ------------------------->
+ <!-- What is React? -->
+ <!-- React is a JavaScript library for building a reusable user interface(UI) -->
+
+ <!-- What is a library? -->
+ <!-- A library is a collection of precompiled code and resources that can be used by developers to add specific functionalities to their applications. It provides a set of pre-written functions, classes, and other components that can be imported and used in a project, saving developers from having to write the code from scratch. Libraries are designed to be reusable and solve common programming problems. -->
+
+ <!-- What is a single page application? -->
+ <!-- A single-page application (SPA) is a type of web application that operates within a single web page, without requiring the entire page to be reloaded during use. In a traditional multi-page application, clicking on a link or performing an action typically results in a server request and a full page refresh. In contrast, an SPA loads the initial HTML, CSS, and JavaScript resources and then dynamically updates the content on the page as the user interacts with it, without navigating to new URLs. -->
+
+ <!-- What is a component ? -->
+ <!-- A component can be a reusable piece of UI code that consists of HTML markup, CSS styles, and JavaScript logic. React components can have their own internal state, receive props (properties) from their parent component, and emit events to communicate with other components -->
+
+ <!-- What is the latest version of React? -->
+ <!-- React latest release is 16.13.1 -->
+
+ <!-- What is DOM? -->
+ <!-- DOM stands for Document Object Model. It is a programming interface for web documents that represents the structure of an HTML or XML document as a tree-like model. The DOM provides a way for programs to interact with the web page's content, structure, and style. -->
+
+ <!-- What is React Virtual DOM? -->
+ <!-- React Virtual DOM is a concept and implementation technique used by the React library to efficiently update and render the user interface (UI) of a web application. -->
+
+ <!-- What does a web application or a website(composed of) have? -->
+ <!-- A web application, or a website, is made of buttons, links, forms with different input fields, header, footer, sections, articles, texts, images, audios, videos and boxes with different shapes. -->
+
+
+ <!-------------------------- 
+    Exercises: Why React? 
+---------------------------->
+<!-- Why did you chose to use react? -->
+<!-- Because React allows us to create reusable UI components
+    We also use it because of the following reasons:
+    fast
+    modular
+    scalable
+    flexible
+    big community and popular
+    open source
+    High job opportunity -->
+
+<!-- What measures do you use to know popularity ? -->
+<!-- One measure of popularity could be GitHub repository stars, watchers and forks -->
+
+<!-- What is more popular, React or Vue ? -->
+<!-- Looking at the number of watchers, stars and forks for both React and Vue, React is more popular -->
+
+
+<!-------------
+Exercises: JSX 
+-------------->
+<!-- What is an HTML element? -->
+<!-- An HTML element has an opening and closing tags, content, and attribute in the opening tag. However, some HTML elements may not have content and a closing tag - they are self closing elements. -->
+
+<!-- How to write a self closing HTML element? -->
+<!-- self-closing elements are elements that do not have a separate closing tag. Instead, they are closed within a single tag. To write a self-closing HTML element, you can use the self-closing slash ("/") at the end of the opening tag -->
+
+<!-- What is an HTML attribute? Write some of them -->
+<!-- attributes provide additional information about an element and modify its behavior or appearance. They are specified within the opening tag of an element and consist of a name-value pair. Here are some commonly used HTML attributes:
+
+id: Specifies a unique identifier for an element.
+Example: <div id="myDiv">...</div>
+
+class: Assigns one or more CSS class names to an element for styling or JavaScript manipulation.
+Example: <p class="highlight">...</p>
+
+src: Specifies the source URL of an external resource, such as an image or a script.
+Example: <img src="image.jpg" alt="Description">
+
+href: Specifies the URL or destination of a hyperlink.
+Example: <a href="https://www.example.com">Link</a>
+
+alt: Provides alternative text for an image if it cannot be displayed.
+Example: <img src="image.jpg" alt="Description">
+ -->
+
+<!-- What is JSX? -->
+<!-- JSX stands for JavaScript XML. JSX allows us to write HTML elements with JavaScript code. -->
+
+<!-- What is babel? -->
+<!-- Babel is a library which transpiles JSX to pure JavaScript and latest JavaScript to older version in other words Babel is a widely used JavaScript compiler that allows developers to write code using the latest features of the JavaScript language and transpile it into a version of JavaScript that is compatible with older browsers and environments. -->
+
+<!-- What is a transpiler? -->
+<!-- A transpiler, short for "transcompiler" or "source-to-source compiler," is a type of compiler that takes source code written in one programming language and translates it into source code written in another programming language. -->
+
+<!--------------------------
+    Exercises: JSX Elements 
+--------------------------->
+<!-- What is JSX Element -->
+<!-- JSX elements represent the building blocks of the user interface. A JSX element is similar to an HTML element, but it is actually a JavaScript object that describes a component or a portion of the UI. JSX elements are written using a syntax that resembles HTML tags, with additional JavaScript expressions and attributes. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2 Excercise</title>
+
+    <style>
+        /* Exercises: Internal Styles
+        Apply different styles to your JSX elements */
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .mainWrapper{
+            background-color: green;
+            color: #FFFFFF;
+            font-size: 16px;
+            padding: 10px;
+            width: 85%;
+            margin: auto;
+            text-align: center;
+        }
+
+        h1{
+            font-size: 40px;
+            text-decoration: underline;
+            color: goldenrod;
+            text-align: center;
+        }
+
+        .footerWrapper{
+            background-color: #61DBFB;
+            font-size: 12px;
+            padding: 10px;
+            width: 85%;
+            margin: auto;
+            text-align: center;
+        }
+        .appWrapper{
+            width: 100%;
+            padding: 20px;
+            max-height: 100vh;
+            margin: auto
+        }
+    </style>
+</head>
+<body>
+    <div class="root"></div>
+
+    <!-- react and reactdom cdn -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <!-- babel library -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        // To get the root element from the HTML document
+        const rootElement = document.querySelector(".root")
+
+        // Write your name in a JSX element and store it in a name variable
+        const name = <h1>Charles</h1>
+
+        // Write a JSX element which displays your full name, country, title, gender, email, phone number. Use h1 for the name and p for the rest of the information and store it in a user variable
+        const user =(
+            <main>
+            <div className="mainWrapper">
+            <h1>Charles Obimnaeto Egesionu</h1>
+            <p>Nigeria</p>
+            <p>Mr</p>
+            <p>Male</p>
+            <p>egesionucharlesobimnaeto@gmail.com</p>
+            <p>08147371491</p>
+            </div>
+            </main>
+        )
+
+        const footer = (
+            <footer>
+            <div className="footerWrapper">
+                <p>Copyright 2023</p>
+            </div>
+            </footer>
+        )
+
+
+        /************* Exercises: Inline Style **************/
+        // Create a style object for the main JSX
+        const mainStyle = {
+            backgroundColor: "green",
+            color: "#FFFFFF",
+            fontSize: "16px",
+            padding: "2px",
+            width: "85%",
+            margin: "auto"
+        }
+
+        // Create a style object for the footer and app JSX and Add more styles to the JSX elements
+        const footerStyle = {
+            backgroundColor: '#61DBFB',
+            fontSize: "12px",
+            width: "80%",
+            margin: "auto"
+        }
+
+        const appStyle = {
+            width: "100%",
+            padding: "20px",
+            maxHeight: "100vh",
+            margin: "auto"
+        }
+
+        const app = (
+            <div className="appWrapper">
+                {user}
+                {footer}
+            </div>
+        )
+
+        /********Exercise: Inject data to JSX ********/
+        // Practice how to make JSX element and injecting dynamic data(string, number, boolean, array, object)
+
+        ReactDOM.render(app, rootElement)
+    </script>
+</body>
+</html>
