@@ -106,20 +106,29 @@ Example: <img src="image.jpg" alt="Description">
             margin: 0;
             box-sizing: border-box;
         }
+        html,
+      body {
+        height: 100%;
+        line-height: 1.5;
+        font-family: 'Montserrat';
+        font-weight: 300;
+        color: black;
+      }
+
+      .root {
+        min-height: 100%;
+        position: relative;
+      }
         .mainWrapper{
-            background-color: green;
+            background-color: #61DBFB;
             color: #FFFFFF;
-            font-size: 16px;
             padding: 10px;
-            width: 85%;
+            width: 100%;
             margin: auto;
-            text-align: center;
         }
 
-        h1{
+        .mainWrapper h1{
             font-size: 40px;
-            text-decoration: underline;
-            color: goldenrod;
             text-align: center;
         }
 
@@ -127,15 +136,18 @@ Example: <img src="image.jpg" alt="Description">
             background-color: #61DBFB;
             font-size: 12px;
             padding: 10px;
-            width: 85%;
-            margin: auto;
-            text-align: center;
-        }
-        .appWrapper{
             width: 100%;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+        }
+        .aboutWrapper{
+            display: grid;
+            justify-content: center;
             padding: 20px;
-            max-height: 100vh;
-            margin: auto
+            margin: auto;
+            width: 100%;
+            height: 300px;
         }
     </style>
 </head>
@@ -166,12 +178,12 @@ Example: <img src="image.jpg" alt="Description">
         const user =(
             <main>
             <div className="mainWrapper">
-            <h1>Charles Obimnaeto Egesionu</h1>
-            <p>Nigeria</p>
-            <p>Mr</p>
-            <p>Male</p>
-            <p>egesionucharlesobimnaeto@gmail.com</p>
-            <p>08147371491</p>
+            <h1>Full Name: Charles Obimnaeto Egesionu</h1>
+            <p>Country: Nigeria</p>
+            <p>Title: King</p>
+            <p>Gender: Male</p>
+            <p>Email: egesionucharlesobimnaeto@gmail.com</p>
+            <p>Phone Number: 08147371491</p>
             </div>
             </main>
         )
@@ -211,15 +223,34 @@ Example: <img src="image.jpg" alt="Description">
             margin: "auto"
         }
 
+         /********Exercise: Inject data to JSX ********/
+        // Practice how to make JSX element and injecting dynamic data(string, number, boolean, array, object)
+        const intro = "Hello, I am";
+        const myName = "Charles Obimnaeto Egesionu"
+        const whatIDo = "Frontend Developer, Software Engineer, UI/UX Designer"
+        const stacks = "HTML, CSS, JavaScript, ReactJS, TypeScript, SCSS, Python"
+        const stacksArr = ["HTML", "CSS", "JavaScript", "ReactJS", "TypeScript", "SCSS", "Python"]
+        const formattedStacksArr = stacks.map((stack)=><li key={stack}>{stack}</li>)
+        const years = 2
+        const about = (
+            <section>
+            <div className="aboutWrapper">
+            <h3>{intro}</h3>
+            <h2>{myName}</h2>
+            <h3>{whatIDo}</h3>
+            <h4>Proficient in {stacks}</h4>
+            <h3>Years of experience: {years}</h3>
+            </div>
+            </section>
+        )
         const app = (
             <div className="appWrapper">
                 {user}
+                {about}
                 {footer}
             </div>
         )
 
-        /********Exercise: Inject data to JSX ********/
-        // Practice how to make JSX element and injecting dynamic data(string, number, boolean, array, object)
 
         ReactDOM.render(app, rootElement)
     </script>
