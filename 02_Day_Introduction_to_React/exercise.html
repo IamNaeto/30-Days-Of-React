@@ -230,8 +230,9 @@ Example: <img src="image.jpg" alt="Description">
         const whatIDo = "Frontend Developer, Software Engineer, UI/UX Designer"
         const stacks = "HTML, CSS, JavaScript, ReactJS, TypeScript, SCSS, Python"
         const stacksArr = ["HTML", "CSS", "JavaScript", "ReactJS", "TypeScript", "SCSS", "Python"]
-        const formattedStacksArr = stacks.map((stack)=><li key={stack}>{stack}</li>)
+        const formattedStacksArr = stacksArr.map((stack)=><li key={stack}>{stack}</li>)
         const years = 2
+
         const about = (
             <section>
             <div className="aboutWrapper">
@@ -243,6 +244,8 @@ Example: <img src="image.jpg" alt="Description">
             </div>
             </section>
         )
+
+        // JSX app element
         const app = (
             <div className="appWrapper">
                 {user}
